@@ -1,6 +1,10 @@
 package pl.vertty.plugins.manager;
 
+import org.bukkit.Location;
 import org.bukkit.entity.Player;
+
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class Combat
 {
@@ -10,6 +14,9 @@ public class Combat
     private long lastAsystTime;
     private Player lastAsystPlayer;
 
+
+    public Set<Location> wallLocations = ConcurrentHashMap.newKeySet();
+
     public Combat(Player p) {
         this.player = p;
         this.lastAttactTime = 0L;
@@ -17,6 +24,20 @@ public class Combat
         this.lastAsystPlayer = null;
         this.lastAsystTime = 0L;
     }
+
+    public void removeWall(Location l){
+        this.wallLocations.remove(l);
+    }
+
+    public void addLocation(Location l){
+        this.wallLocations.add(l);
+    }
+
+    public Set<Location> getWallLocations(){
+        return this.wallLocations;
+    }
+
+
 
     public Player getPlayer() {
         return player;

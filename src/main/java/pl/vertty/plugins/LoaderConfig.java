@@ -1,12 +1,12 @@
 package pl.vertty.plugins;
 
+import java.io.File;
 import java.util.List;
 
-public class LoaderConfig
-{
+public class LoaderConfig {
     public static boolean spawn_status;
+    public static boolean spawn_sciana_status;
     public static String spawn_permission;
-    public static int spawn_kratki;
     public static boolean spawn_efekt;
     public static boolean wiadomosci_actionbar;
     public static String wiadomosci_actionbarpvp;
@@ -19,6 +19,8 @@ public class LoaderConfig
     public static int spawnx;
     public static int spawnz;
     public static int spawndistance;
+    public static int sciana_id;
+    public static int sciana_data;
     public static List<String> komendy_pvp;
     public static String komendy_permission;
     public static String komendy_error;
@@ -44,12 +46,20 @@ public class LoaderConfig
     public static String HOPPER_MESSAGE;
     public static boolean WORKBENCH_STATUS;
     public static String WORKBENCH_MESSAGE;
+    public static boolean HOPPER_MINECART_STATUS;
+    public static String HOPPER_MINECART_MESSAGE;
+    public static boolean STORAGE_MINECART_STATUS;
+    public static String STORAGE_MINECART_MESSAGE;
+    public static boolean TRAPPED_CHEST_STATUS;
+    public static String TRAPPED_CHEST_MESSAGE;
+    public static boolean ITEM_FRAME_STATUS;
+    public static String ITEM_FRAME_MESSAGE;
 
     public static void load() {
         Main.getInst().saveDefaultConfig();
         spawn_status = Main.getInst().getConfig().getBoolean("spawn.status");
+        spawn_sciana_status = Main.getInst().getConfig().getBoolean("spawn.status_sciana");
         spawn_permission = Main.getInst().getConfig().getString("spawn.permission");
-        spawn_kratki = Main.getInst().getConfig().getInt("spawn.kratki");
         spawn_efekt = Main.getInst().getConfig().getBoolean("spawn.efekt");
         wiadomosci_actionbar = Main.getInst().getConfig().getBoolean("wiadomosci.status_actionbar");
         wiadomosci_actionbarpvp = Main.getInst().getConfig().getString("wiadomosci.actionbar_inpvp");
@@ -61,6 +71,8 @@ public class LoaderConfig
         wiadomosci_time = Main.getInst().getConfig().getInt("wiadomosci.time");
         spawnx = Main.getInst().getConfig().getInt("spawn.kordy.x");
         spawnz = Main.getInst().getConfig().getInt("spawn.kordy.z");
+        sciana_id = Main.getInst().getConfig().getInt("spawn.kordy.id");
+        sciana_data = Main.getInst().getConfig().getInt("spawn.kordy.data");
         spawndistance = Main.getInst().getConfig().getInt("spawn.kordy.distance");
         komendy_pvp = Main.getInst().getConfig().getStringList("komendy.block");
         komendy_permission = Main.getInst().getConfig().getString("komendy.permission");
@@ -87,5 +99,13 @@ public class LoaderConfig
         HOPPER_MESSAGE = Main.getInst().getConfig().getString("HOPPER.message");
         WORKBENCH_STATUS = Main.getInst().getConfig().getBoolean("WORKBENCH.status");
         WORKBENCH_MESSAGE = Main.getInst().getConfig().getString("WORKBENCH.message");
+        HOPPER_MINECART_STATUS = Main.getInst().getConfig().getBoolean("HOPPER_MINECART.status");
+        HOPPER_MINECART_MESSAGE = Main.getInst().getConfig().getString("HOPPER_MINECART.message");
+        STORAGE_MINECART_STATUS = Main.getInst().getConfig().getBoolean("STORAGE_MINECART.status");
+        STORAGE_MINECART_MESSAGE = Main.getInst().getConfig().getString("STORAGE_MINECART.message");
+        TRAPPED_CHEST_STATUS = Main.getInst().getConfig().getBoolean("TRAPPED_CHEST.status");
+        TRAPPED_CHEST_MESSAGE = Main.getInst().getConfig().getString("TRAPPED_CHEST.message");
+        ITEM_FRAME_STATUS = Main.getInst().getConfig().getBoolean("ITEM_FRAME.status");
+        ITEM_FRAME_MESSAGE = Main.getInst().getConfig().getString("ITEM_FRAME.message");
     }
 }

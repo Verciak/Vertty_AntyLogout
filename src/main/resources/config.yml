@@ -5,14 +5,14 @@
 
 #Odpychanie od spawna
 spawn:
-  #czy ma byc wlaczone odpychanie od spawna
+  #czy ma byc wlaczone odpychanie od spawna (lepiej niech bedzie wlaczone bo czasami idzie sie zbugowac w scianie)
   status: true
+
+  #czy ma byc wlaczone odpychanie od spawna
+  status_sciana: true
 
   #Permisja do omijania odpychania od spawna
   permission: "logout.admin"
-
-  #Ilosc kratek od srodka do lini pvp (spawn usawiamy komenda /setworldspawn)
-  kratki: 10
 
   #czy ma byc wlaczony efekt podczas odpychania od spawna
   efekt: true
@@ -27,6 +27,12 @@ spawn:
 
     #na ktorej kratce jest linia od srodka
     distance: 10
+
+    #id bloku sciany
+    id: 95
+
+    #data bloku sciany
+    data: 15
 
 #Ogolne ustawienia i wiadomosci
 wiadomosci:
@@ -103,3 +109,16 @@ HOPPER:
 WORKBENCH:
   status: true
   message: "&8&l• &cNie mozesz otwierac &4WORKBENCH &cpodczas walki!"
+
+HOPPER_MINECART:
+  status: true
+  message: "&8&l• &cNie mozesz otwierac &4HOPPER_MINECART &cpodczas walki!"
+STORAGE_MINECART:
+  status: true
+  message: "&8&l• &cNie mozesz otwierac &4STORAGE_MINECART &cpodczas walki!"
+TRAPPED_CHEST:
+  status: true
+  message: "&8&l• &cNie mozesz otwierac &4TRAPPED_CHEST &cpodczas walki!"
+ITEM_FRAME:
+  status: true
+  message: "&8&l• &cNie mozesz otwierac &4ITEM_FRAME &cpodczas walki!"

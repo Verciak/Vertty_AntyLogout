@@ -1,6 +1,8 @@
 package pl.vertty.plugins.listeners;
 
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
+import org.bukkit.entity.Projectile;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -13,6 +15,12 @@ import pl.vertty.plugins.manager.CombatManager;
 
 public class EntityDamageByEntityListener implements Listener
 {
+
+    @EventHandler(priority = EventPriority.HIGHEST)
+    public void onEntityDamagee(final EntityDamageByEntityEvent e) {
+
+    }
+
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onEntityDamage(final EntityDamageByEntityEvent e) {
         if (e.isCancelled()) {
@@ -43,7 +51,7 @@ public class EntityDamageByEntityListener implements Listener
         }
         entity.setLastAttactkPlayer(d);
         if(e.getDamager() instanceof Player) {
-            final Combat atacker = CombatManager.getCombat((Player) e.getDamager());
+            final Combat atacker = CombatManager.getCombat(d);
             if (atacker == null) {
                 return;
             }
@@ -56,6 +64,25 @@ public class EntityDamageByEntityListener implements Listener
                 atacker.setLastAsystTime(System.currentTimeMillis() + TimeUtil.SECOND.getTime(LoaderConfig.wiadomosci_time));
             }
             atacker.setLastAttactkPlayer(d);
+        }
+        final Entity damager = e.getDamager();
+        if (damager instanceof Projectile) {
+            final Projectile pa = (Projectile)damager;
+            if (pa.getShooter() instanceof Player) {
+                final Combat atacker = CombatManager.getCombat(((Player) pa.getShooter()).getPlayer());
+                if (atacker == null) {
+                    return;
+                }
+                if (!atacker.hasFight()) {
+                    ChatUtil.sendMessage(e.getDamager(), LoaderConfig.wiadomosci_chatplayer.replace("{TIME}", String.valueOf(LoaderConfig.wiadomosci_time)));
+                }
+                atacker.setLastAttactTime(System.currentTimeMillis() + TimeUtil.SECOND.getTime(LoaderConfig.wiadomosci_time));
+                if (atacker.getLastAttactkPlayer() != d) {
+                    atacker.setLastAsystPlayer(atacker.getLastAttactkPlayer());
+                    atacker.setLastAsystTime(System.currentTimeMillis() + TimeUtil.SECOND.getTime(LoaderConfig.wiadomosci_time));
+                }
+                atacker.setLastAttactkPlayer(d);
+            }
         }
     }
 }

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Vertty_AntyLogout-Zamowienie:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Vertty_AntyLogout_Zamowienie_jar</output-path>
+    <root id="archive" name="Vertty_AntyLogout-Zamowienie.jar">
+      <element id="module-output" name="Vertty_AntyLogout-Zamowienie" />
+    </root>
+  </artifact>
+</component>

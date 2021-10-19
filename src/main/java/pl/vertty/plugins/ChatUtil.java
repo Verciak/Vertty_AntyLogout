@@ -28,12 +28,12 @@ public class ChatUtil {
     public static Player getDamager(final EntityDamageByEntityEvent e) {
         final Entity damager = e.getDamager();
         if (damager instanceof Player) {
-            return (Player) damager;
+            return (Player)damager;
         }
         if (damager instanceof Projectile) {
-            final Projectile p = (Projectile) damager;
+            final Projectile p = (Projectile)damager;
             if (p.getShooter() instanceof Player) {
-                return (Player) p.getShooter();
+                return (Player)p.getShooter();
             }
         }
         return null;

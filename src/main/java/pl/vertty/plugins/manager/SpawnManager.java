@@ -12,6 +12,15 @@ public class SpawnManager {
         return spawn;
     }
 
+    public static boolean isSpawnNear(final Location loc) {
+        if (!loc.getWorld().equals(spawn.getWorld())) {
+            return false;
+        }
+        int distancex = Math.abs(loc.getBlockX() - LoaderConfig.spawnx);
+        int distancez = Math.abs(loc.getBlockZ() - LoaderConfig.spawnz);
+        return (distancex <= LoaderConfig.spawndistance + 10) && (distancez <= LoaderConfig.spawndistance + 10);
+    }
+
     public static boolean isSpawnLinia(final Location loc) {
         if (!loc.getWorld().equals(spawn.getWorld())) {
             return false;
@@ -19,5 +28,14 @@ public class SpawnManager {
         int distancex = Math.abs(loc.getBlockX() - LoaderConfig.spawnx);
         int distancez = Math.abs(loc.getBlockZ() - LoaderConfig.spawnz);
         return (distancex <= LoaderConfig.spawndistance) && (distancez <= LoaderConfig.spawndistance);
+    }
+
+    public static boolean isSpawnLiniaKnock(final Location loc) {
+        if (!loc.getWorld().equals(spawn.getWorld())) {
+            return false;
+        }
+        int distancex = Math.abs(loc.getBlockX() - LoaderConfig.spawnx);
+        int distancez = Math.abs(loc.getBlockZ() - LoaderConfig.spawnz);
+        return (distancex <= LoaderConfig.spawndistance + 1) && (distancez <= LoaderConfig.spawndistance + 1);
     }
 }
