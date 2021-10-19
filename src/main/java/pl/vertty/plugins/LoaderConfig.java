@@ -1,0 +1,91 @@
+package pl.vertty.plugins;
+
+import java.util.List;
+
+public class LoaderConfig
+{
+    public static boolean spawn_status;
+    public static String spawn_permission;
+    public static int spawn_kratki;
+    public static boolean spawn_efekt;
+    public static boolean wiadomosci_actionbar;
+    public static String wiadomosci_actionbarpvp;
+    public static String wiadomosci_actionbarendpvp;
+    public static String wiadomosci_actionbarendpvpchat;
+    public static String wiadomosci_chatlogout;
+    public static String wiadomosci_chatdamager;
+    public static String wiadomosci_chatplayer;
+    public static int wiadomosci_time;
+    public static int spawnx;
+    public static int spawnz;
+    public static int spawndistance;
+    public static List<String> komendy_pvp;
+    public static String komendy_permission;
+    public static String komendy_error;
+    public static boolean ANVIL_STATUS;
+    public static String ANVIL_MESSAGE;
+    public static boolean BEACON_STATUS;
+    public static String BEACON_MESSAGE;
+    public static boolean BREWING_STATUS;
+    public static String BREWING_MESSAGE;
+    public static boolean CHEST_STATUS;
+    public static String CHEST_MESSAGE;
+    public static boolean DISPENSER_STATUS;
+    public static String DISPENSER_MESSAGE;
+    public static boolean DROPPER_STATUS;
+    public static String DROPPER_MESSAGE;
+    public static boolean ENCHANTING_STATUS;
+    public static String ENCHANTING_MESSAGE;
+    public static boolean ENDER_CHEST_STATUS;
+    public static String ENDER_CHEST_MESSAGE;
+    public static boolean FURNACE_STATUS;
+    public static String FURNACE_MESSAGE;
+    public static boolean HOPPER_STATUS;
+    public static String HOPPER_MESSAGE;
+    public static boolean WORKBENCH_STATUS;
+    public static String WORKBENCH_MESSAGE;
+
+    public static void load() {
+        Main.getInst().saveDefaultConfig();
+        spawn_status = Main.getInst().getConfig().getBoolean("spawn.status");
+        spawn_permission = Main.getInst().getConfig().getString("spawn.permission");
+        spawn_kratki = Main.getInst().getConfig().getInt("spawn.kratki");
+        spawn_efekt = Main.getInst().getConfig().getBoolean("spawn.efekt");
+        wiadomosci_actionbar = Main.getInst().getConfig().getBoolean("wiadomosci.status_actionbar");
+        wiadomosci_actionbarpvp = Main.getInst().getConfig().getString("wiadomosci.actionbar_inpvp");
+        wiadomosci_actionbarendpvp = Main.getInst().getConfig().getString("wiadomosci.actionbar_endpvp");
+        wiadomosci_actionbarendpvpchat = Main.getInst().getConfig().getString("wiadomosci.chat_endpvp");
+        wiadomosci_chatlogout = Main.getInst().getConfig().getString("wiadomosci.chat_logout");
+        wiadomosci_chatdamager = Main.getInst().getConfig().getString("wiadomosci.chat_damager");
+        wiadomosci_chatplayer = Main.getInst().getConfig().getString("wiadomosci.chat_player");
+        wiadomosci_time = Main.getInst().getConfig().getInt("wiadomosci.time");
+        spawnx = Main.getInst().getConfig().getInt("spawn.kordy.x");
+        spawnz = Main.getInst().getConfig().getInt("spawn.kordy.z");
+        spawndistance = Main.getInst().getConfig().getInt("spawn.kordy.distance");
+        komendy_pvp = Main.getInst().getConfig().getStringList("komendy.block");
+        komendy_permission = Main.getInst().getConfig().getString("komendy.permission");
+        komendy_error = Main.getInst().getConfig().getString("komendy.message");
+        ANVIL_STATUS = Main.getInst().getConfig().getBoolean("ANVIL.status");
+        ANVIL_MESSAGE = Main.getInst().getConfig().getString("ANVIL.message");
+        BEACON_STATUS = Main.getInst().getConfig().getBoolean("BEACON.status");
+        BEACON_MESSAGE = Main.getInst().getConfig().getString("BEACON.message");
+        BREWING_STATUS = Main.getInst().getConfig().getBoolean("BREWING.status");
+        BREWING_MESSAGE = Main.getInst().getConfig().getString("BREWING.message");
+        CHEST_STATUS = Main.getInst().getConfig().getBoolean("CHEST.status");
+        CHEST_MESSAGE = Main.getInst().getConfig().getString("CHEST.message");
+        DISPENSER_STATUS = Main.getInst().getConfig().getBoolean("DISPENSER.status");
+        DISPENSER_MESSAGE = Main.getInst().getConfig().getString("DISPENSER.message");
+        DROPPER_STATUS = Main.getInst().getConfig().getBoolean("DROPPER.status");
+        DROPPER_MESSAGE = Main.getInst().getConfig().getString("DROPPER.message");
+        ENCHANTING_STATUS = Main.getInst().getConfig().getBoolean("ENCHANTING.status");
+        ENCHANTING_MESSAGE = Main.getInst().getConfig().getString("ENCHANTING.message");
+        ENDER_CHEST_STATUS = Main.getInst().getConfig().getBoolean("ENDER_CHEST.status");
+        ENDER_CHEST_MESSAGE = Main.getInst().getConfig().getString("ENDER_CHEST.message");
+        FURNACE_STATUS = Main.getInst().getConfig().getBoolean("FURNACE.status");
+        FURNACE_MESSAGE = Main.getInst().getConfig().getString("FURNACE.message");
+        HOPPER_STATUS = Main.getInst().getConfig().getBoolean("HOPPER.status");
+        HOPPER_MESSAGE = Main.getInst().getConfig().getString("HOPPER.message");
+        WORKBENCH_STATUS = Main.getInst().getConfig().getBoolean("WORKBENCH.status");
+        WORKBENCH_MESSAGE = Main.getInst().getConfig().getString("WORKBENCH.message");
+    }
+}
