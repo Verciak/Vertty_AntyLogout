@@ -1,7 +1,7 @@
 # Vertty_AntyLogout
 Plugin na AntyLogout, wiele funkcji.
 
-Kod nie jest super dobry, robione na szybko!
+Kod nie jest super dobry, robione na szybko! Pod 1.8.8
 
 ## Lista funkcji
 - odpychanie od spawna
